@@ -1,10 +1,11 @@
 <script lang="ts">
-    import Button from "$lib/components/buttons/Button.svelte";
+    // import Button from "$lib/components/buttons/Button.svelte";
+    import Button from "$components/buttons/Button.svelte";
     import { baseService } from "$lib/api/apiRequests";
 
     let name = "world";
 
-    const handleClick = async (e) => {
+    const handleClick = async (e: Event) => {
         alert("clicked");
         console.log(e);
     }
@@ -25,7 +26,7 @@
     test page
 </h1>
 <div class="first">
-    <button on:click={(e) => handleClick(e)}>Button created inner page</button>
+    <button style="background-color: antiquewhite" on:click={(e) => handleClick(e)}>Button created inner page</button>
     <h2>Button tests by components</h2>
     <Button buttonName="onclick test" on:click={(e) => handleClick(e)}/>
     <br/><br/>
