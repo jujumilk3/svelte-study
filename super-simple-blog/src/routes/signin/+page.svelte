@@ -1,6 +1,9 @@
 <script lang="ts">
     import {authService} from "$lib/api/apiRequests";
-    import {goto} from "$app/navigation";
+    import {setToLocalStorage} from "$lib/utils/localStorage";
+    import {userData} from "$lib/store/userStore";
+    import type { User } from "$lib/interfaces/user.interfaces";
+    // import {goto} from "$app/navigation";
 
     let email = ''
     let password = ''
@@ -8,8 +11,12 @@
     const handleLogin = async () => {
         console.log(email, password);
         const response = await authService.signin(email, password);
-        console.log(response);
-
+        if (response.status === 200) {
+            const userResponse = await response.json();
+            console.log(userResponse);
+            setToLocalStorage('access_token', userResponse.access_token || '');
+            userData.set(userResponse);
+        }
     }
 </script>
 

@@ -27,19 +27,15 @@ export const authService = {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email, nickname, password})
         });
-        console.log(response);
         return response.json();
     },
 
     async signin(email: string, password: string) {
-        console.log(email, password);
-        const response = await fetch(`${configs.BASE_API_URL}/v1/auth/signin`, {
+        return await fetch(`${configs.BASE_API_URL}/v1/auth/signin`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email, password})
         });
-
-        return response.json();
     },
 
     async signout() {

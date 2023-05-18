@@ -1,5 +1,6 @@
 <script>
 import { page } from "$app/stores";
+import {userData} from "$lib/store/userStore";
 </script>
 
 <nav class="navbar navbar-light mx-auto">
@@ -21,6 +22,11 @@ import { page } from "$app/stores";
                 <a href="/request-with-page-load" class="nav-link" class:active={$page.url.pathname === '/request-with-page-load'}>Request with page load</a>
             </li>
         </ul>
+        <div>
+            data div<br/>
+            userData:<br/>
+            {JSON.stringify($userData)}
+        </div>
     </div>
 </nav>
 
