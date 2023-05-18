@@ -17,6 +17,9 @@ import { page } from "$app/stores";
             <li class="nav-item">
                 <a href="/signup" class="nav-link" class:active={$page.url.pathname === '/signup'}>Sign up</a>
             </li>
+            <li class="nav-item">
+                <a href="/request-with-page-load" class="nav-link" class:active={$page.url.pathname === '/request-with-page-load'}>Request with page load</a>
+            </li>
         </ul>
     </div>
 </nav>
