@@ -12,6 +12,11 @@
 //     throw error(404, 'Not found');
 // }
 
+// https://kit.svelte.dev/docs/load
+// +page.server.ts와 +page.ts를 분리해서 쓰는 이유
+// If your load function should always run on the server (because it uses private environment variables,
+// for example, or accesses a database) then it would go in a +page.server.ts instead.
+
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
