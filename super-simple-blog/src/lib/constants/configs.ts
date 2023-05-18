@@ -2,6 +2,7 @@ class Configs {
     readonly APP_NAME: string = 'super-simple-blog';
     readonly ENV: string = import.meta.env.ENV || null;
     readonly BASE_API_URL: string = import.meta.env.BASE_API_URL || 'http://localhost:8000';
+    readonly JSON_PLACEHOLDER_API_URL: string = 'https://jsonplaceholder.typicode.com';
 
     constructor() {
         if (this.ENV === 'dev') {

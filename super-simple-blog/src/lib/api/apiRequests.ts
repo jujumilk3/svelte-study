@@ -21,13 +21,13 @@ export const baseService = {
 }
 
 export const authService = {
-    async signup(email: string, password: string) {
+    async signup(email: string, nickname: string, password: string) {
         const response = await fetch(`${configs.BASE_API_URL}/v1/auth/signup`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password})
+            body: JSON.stringify({email, nickname, password})
         });
-
+        console.log(response);
         return response.json();
     },
 
