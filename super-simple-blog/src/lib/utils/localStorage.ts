@@ -11,3 +11,10 @@ export const setToLocalStorage = (key: string, value: string) => {
         localStorage.setItem(key, value);
     }
 }
+
+
+export const removeLocalStorage = (key: string) => {
+    if (browser) {
+        localStorage.removeItem(key);
+    }
+}
